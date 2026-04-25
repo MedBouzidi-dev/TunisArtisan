@@ -1,6 +1,8 @@
 package com.example.tunisartisan.Entities;
 
-public enum StatutArtisan {
+import java.io.Serializable;
+
+public enum StatutArtisan implements Serializable {
     ACTIF,
     En_ATTENTE,
     SUSPENDU

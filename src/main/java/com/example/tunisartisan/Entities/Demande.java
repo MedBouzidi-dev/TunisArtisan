@@ -6,20 +6,26 @@ import lombok.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "services")
+@Table(name = "demandes")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Service implements Serializable {
+public class Demande implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idservice;
-    private String nomservice;
-    private String descriptionservice;
-    private float prix;
+    private Long iddemande;
+    private String description;
+    @Enumerated(EnumType.STRING)
+    private StatutDemande statut;
+
+    @ManyToOne
+    private User client;
 
     @ManyToOne
     private Artisan artisan;
+
+    @ManyToOne
+    private Service service;
 }

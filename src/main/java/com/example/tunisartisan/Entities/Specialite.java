@@ -1,6 +1,8 @@
 package com.example.tunisartisan.Entities;
 
-public enum Specialite {
+import java.io.Serializable;
+
+public enum Specialite implements Serializable {
     PLOMBIER,
     ELECTRICIEN,
     MENUISIER,
