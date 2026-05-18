@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="/js/tailwind_config.js"></script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background min-h-screen">
+    <!-- SideNavBar -->
+    <aside
+        class="w-64 h-screen fixed left-0 top-0 bg-surface-container dark:bg-surface-container-high shadow-sm flex flex-col h-full py-8 z-[60]">
+        <div class="font-headline-section text-headline-section text-primary dark:text-inverse-primary mb-8 px-4">
+            Artisan Admin
+        </div>
+        <nav class="flex-grow">
+            <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest transition-colors duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                <span class="font-label-bold text-label-bold">Dashboard</span>
+            </a>
+            <a class="text-primary dark:text-inverse-primary bg-primary-container/10 border-r-4 border-primary px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest transition-colors duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="group">group</span>
+                <span class="font-label-bold text-label-bold">User Management</span>
+            </a>
+            <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest transition-colors duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="handyman">handyman</span>
+                <span class="font-label-bold text-label-bold">Service Management</span>
+            </a>
+            <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest transition-colors duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                <span class="font-label-bold text-label-bold">Verifications</span>
+            </a>
+            <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest transition-colors duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                <span class="font-label-bold text-label-bold">Settings</span>
+            </a>
+        </nav>
+        <div class="px-4 mt-auto">
+            <div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg mb-6">
+                <img alt="Admin Profile Picture" class="w-10 h-10 rounded-full bg-secondary-container object-cover"
+                    data-alt="A professional close-up portrait of a corporate administrator in a bright, modern office setting. The lighting is soft and natural, emphasizing a trustworthy and professional demeanor. The background is a clean, minimalist workspace with subtle blue and gray tones, aligning with the Heritage Admin brand identity."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKKqYACGObOkQEe5bRZfAWlOQGVCyY9wBa0P8zcNhKxvycR37nGkD3k3_uRVD55YHn8UaxqMJJdjveCW7OifzwO8ncZwN1Ju2YpvvVW3TE5gOQwd0ooEeDtQO4Zls3fP27kQbZqz9eh02lhApr53ug1aCyvqcF9AQ-ECLe2QDDT9S1ZJywKhwp7g9YagQ7LgdsEmuwDUbqk-alt9fn4Y0js3hxPCzQ6gNYIZ1gj8M1PmJgh20gS8lMdmflWl2jNxoJZ2rlORCBAQ7Q" />
+                <div class="overflow-hidden">
+                    <p class="font-label-bold text-label-bold truncate">Artisan Admin</p>
+                    <p class="font-caption text-caption text-on-surface-variant truncate">Marketplace Controller</p>
+                </div>
+            </div>
+            <button
+                class="w-full py-3 px-4 bg-primary text-on-primary font-label-bold text-label-bold rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+                Generate Reports
+            </button>
+        </div>
+    </aside>
+    <!-- TopNavBar -->
+    <header
+        class="flex justify-between items-center w-full h-16 px-gutter ml-64 max-w-[calc(100%-16rem)] fixed top-0 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md z-50 border-b border-outline-variant/30 dark:border-outline/30">
+        <div class="flex items-center flex-1 max-w-xl">
+            <div class="relative w-full group">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                    data-icon="search">search</span>
+                <input
+                    class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary/20 font-body-base text-body-base transition-all"
+                    placeholder="Search for users, artisans, or logs..." type="text" />
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+            </button>
+            <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+            </button>
+            <div class="h-8 w-px bg-outline-variant/30 mx-2"></div>
+            <div class="flex items-center gap-2">
+                <span class="font-label-bold text-label-bold text-primary dark:text-inverse-primary">Heritage
+                    Admin</span>
+                <img alt="Administrator Avatar"
+                    class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-xs"
+                    data-alt="A clean, minimalist profile avatar placeholder for an administrator. The design is simple and modern, using a palette of soft blues and cool grays. The background is a crisp white, creating a high-contrast and professional look suitable for a high-end marketplace dashboard."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGzsY2RwiGBUh7mQbkwuZsx-DpqT71MVqTfIKQfg2JbNO66TVvKVP0c5gqbQrDRnFGs9wrNhf8_qJry3sI7HNZkPlPmBKcc6YyUcePPSfdyybKNbf6IicGOLkzzuhaDsDggAf8IgwiNLvkt-BPbHLtqeqepP056eM5IvXqkZ0jeoNr_qk6PcHEMpXiVac7w4UowWUtyUIUkrgTNJgnvbDrNCFDj6s3u1uyMQb8376Du5HY9lI4N9Wk3SgfKD6Oq0viHcnznlGrPA2E" />
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 pt-24 pb-section-padding px-gutter max-w-[1280px] mx-auto min-h-screen">
+        <div class="mb-stack-lg">
+            <h1 class="font-headline-section text-headline-section text-on-surface">Create New User</h1>
+            <p class="font-body-base text-body-base text-on-surface-variant mt-2">Onboard a new member to the Heritage
+                Artisan ecosystem.</p>
+        </div>
+        <div class="grid grid-cols-12 gap-gutter">
+            <!-- Form Section -->
+            <div class="col-span-12 lg:col-span-8 space-y-stack-lg">
+                <form th:action="@{/users}" th:object="${user}" method="post" class="space-y-stack-lg">
+                <!-- Basic Information Card -->
+                <section
+                    class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-sm border border-outline-variant/30">
+                    <div class="flex items-center gap-3 mb-stack-md border-b border-outline-variant/20 pb-4">
+                        <span class="material-symbols-outlined text-primary" data-icon="badge">badge</span>
+                        <h2 class="font-label-bold text-label-bold text-on-surface">Basic Information</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+                        <div class="space-y-1">
+                            <label class="font-label-bold text-caption text-on-surface-variant ml-1">Nom</label>
+                            <div class="relative flex items-center bg-surface-container-low rounded-lg p-3 shadow-sm border border-transparent focus-within:border-primary/30 transition-all">
+                                <span class="material-symbols-outlined text-outline mr-3" data-icon="person">person</span>
+                                <input class="bg-transparent border-none w-full p-0 focus:ring-0 font-body-base text-body-base placeholder:text-outline/50"
+                                    placeholder="Nom" type="text" th:field="*{nom}" />
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="font-label-bold text-caption text-on-surface-variant ml-1">Prenom</label>
+                            <div class="relative flex items-center bg-surface-container-low rounded-lg p-3 shadow-sm border border-transparent focus-within:border-primary/30 transition-all">
+                                <span class="material-symbols-outlined text-outline mr-3" data-icon="person">person</span>
+                                <input class="bg-transparent border-none w-full p-0 focus:ring-0 font-body-base text-body-base placeholder:text-outline/50"
+                                    placeholder="Prenom" type="text" th:field="*{prenom}" />
+                            </div>
+                        </div>
+                        <div class="space-y-1 md:col-span-2">
+                            <label class="font-label-bold text-caption text-on-surface-variant ml-1">Email</label>
+                            <div class="relative flex items-center bg-surface-container-low rounded-lg p-3 shadow-sm border border-transparent focus-within:border-primary/30 transition-all">
+                                <span class="material-symbols-outlined text-outline mr-3" data-icon="mail">mail</span>
+                                <input class="bg-transparent border-none w-full p-0 focus:ring-0 font-body-base text-body-base placeholder:text-outline/50"
+                                    placeholder="email@example.com" type="email" th:field="*{email}" />
+                            </div>
+                        </div>
+                        <div class="space-y-1 md:col-span-2">
+                            <label class="font-label-bold text-caption text-on-surface-variant ml-1">Adresse</label>
+                            <div class="relative flex items-center bg-surface-container-low rounded-lg p-3 shadow-sm border border-transparent focus-within:border-primary/30 transition-all">
+                                <span class="material-symbols-outlined text-outline mr-3" data-icon="location_on">location_on</span>
+                                <input class="bg-transparent border-none w-full p-0 focus:ring-0 font-body-base text-body-base placeholder:text-outline/50"
+                                    placeholder="Adresse" type="text" th:field="*{adresse}" />
+                            </div>
+                        </div>
+                        <div class="space-y-1 md:col-span-2">
+                            <label class="font-label-bold text-caption text-on-surface-variant ml-1">Telephone</label>
+                            <div class="relative flex items-center bg-surface-container-low rounded-lg p-3 shadow-sm border border-transparent focus-within:border-primary/30 transition-all">
+                                <span class="material-symbols-outlined text-outline mr-3" data-icon="call">call</span>
+                                <input class="bg-transparent border-none w-full p-0 focus:ring-0 font-body-base text-body-base placeholder:text-outline/50"
+                                    placeholder="+216" type="tel" th:field="*{tel}" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Account Settings Card -->
+                <section
+                    class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-sm border border-outline-variant/30">
+                    <div class="flex items-center gap-3 mb-stack-md border-b border-outline-variant/20 pb-4">
+                        <span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+                        <h2 class="font-label-bold text-label-bold text-on-surface">Account Settings</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+                        <div class="space-y-1">
+                            <label class="font-label-bold text-caption text-on-surface-variant ml-1">User Role</label>
+                            <div
+                                class="relative flex items-center bg-surface-container-low rounded-lg p-3 shadow-sm border border-transparent focus-within:border-primary/30 transition-all">
+                                <span class="material-symbols-outlined text-outline mr-3" data-icon="rule">rule</span>
+                                <select
+                                    class="bg-transparent border-none w-full p-0 focus:ring-0 font-body-base text-body-base text-on-surface appearance-none">
+                                    <option value="artisan">Artisan</option>
+                                    <option value="client">Client</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                                <span
+                                    class="material-symbols-outlined text-outline absolute right-3 pointer-events-none"
+                                    data-icon="expand_more">expand_more</span>
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="font-label-bold text-caption text-on-surface-variant ml-1">Password</label>
+                            <div
+                                class="relative flex items-center bg-surface-container-low rounded-lg p-3 shadow-sm border border-transparent focus-within:border-primary/30 transition-all">
+                                <span class="material-symbols-outlined text-outline mr-3" data-icon="lock">lock</span>
+                                <input class="bg-transparent border-none w-full p-0 focus:ring-0 font-body-base text-body-base placeholder:text-outline/50"
+                                    placeholder="••••••••••••" type="password" th:field="*{password}" />
+                                <span class="material-symbols-outlined text-outline ml-3 cursor-pointer"
+                                    data-icon="visibility">visibility</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Initial Status Card -->
+                <section
+                    class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-sm border border-outline-variant/30">
+                    <div class="flex items-center justify-between border-b border-outline-variant/20 pb-4 mb-stack-md">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary" data-icon="toggle_on">toggle_on</span>
+                            <h2 class="font-label-bold text-label-bold text-on-surface">Initial Status</h2>
+                        </div>
+                        <span
+                            class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-caption font-label-bold uppercase tracking-wider">Active</span>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
+                        <div>
+                            <p class="font-label-bold text-body-base text-on-surface">Account Visibility</p>
+                            <p class="font-caption text-caption text-on-surface-variant">Enable this account to access
+                                the platform immediately upon creation.</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input checked="" class="sr-only peer" type="checkbox" />
+                            <div
+                                class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                </section>
+                <!-- Actions -->
+                <div class="flex items-center justify-end gap-stack-md pt-stack-md">
+                    <a class="px-8 py-3 bg-secondary-container/20 text-primary font-label-bold text-label-bold rounded-lg hover:bg-secondary-container/40 transition-colors"
+                        th:href="@{/users}">Cancel</a>
+                    <button class="px-8 py-3 bg-primary text-on-primary font-label-bold text-label-bold rounded-lg shadow-sm hover:opacity-90 active:scale-[0.98] transition-all"
+                        type="submit">Create User</button>
+                </div>
+                </form>
+            </div>
+            <!-- Contextual Sidebar / Info Panel -->
+            <div class="hidden lg:block lg:col-span-4 space-y-stack-lg">
+                <div class="bg-primary text-on-primary p-stack-lg rounded-xl shadow-lg relative overflow-hidden group">
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-4xl mb-4" data-icon="info">info</span>
+                        <h3 class="font-label-bold text-headline-section mb-2">Heritage Guidelines</h3>
+                        <p class="font-body-base text-body-base opacity-90">When creating an Artisan account, ensure
+                            they have valid proof of craftsmanship to maintain our quality standards.</p>
+                        <ul class="mt-stack-md space-y-2 opacity-80 font-caption text-caption">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm"
+                                    data-icon="check_circle">check_circle</span> Verified Identity Required</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm"
+                                    data-icon="check_circle">check_circle</span> Portfolio Review Status</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm"
+                                    data-icon="check_circle">check_circle</span> Regional Authenticity Check</li>
+                        </ul>
+                    </div>
+                    <!-- Decorative background pattern -->
+                    <div
+                        class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
+                        <span class="material-symbols-outlined text-[120px]"
+                            data-icon="auto_awesome">auto_awesome</span>
+                    </div>
+                </div>
+                <div class="bg-surface-container-high p-stack-lg rounded-xl shadow-sm">
+                    <h3 class="font-label-bold text-label-bold text-on-surface mb-stack-md">Recent Activity</h3>
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-sm"
+                                    data-icon="person_add">person_add</span>
+                            </div>
+                            <div>
+                                <p class="font-caption text-caption text-on-surface">Admin created 'Sonia K.'</p>
+                                <p class="text-[10px] text-on-surface-variant">2 minutes ago</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-sm"
+                                    data-icon="edit">edit</span>
+                            </div>
+                            <div>
+                                <p class="font-caption text-caption text-on-surface">Profile updated: 'Artisan #102'</p>
+                                <p class="text-[10px] text-on-surface-variant">1 hour ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

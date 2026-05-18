@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="/js/tailwind_config.js"></script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background antialiased">
+    <!-- TopNavBar -->
+    <header
+        class="bg-white/90 backdrop-blur-md sticky top-0 w-full z-50 border-b border-slate-200 shadow-sm font-['Inter'] antialiased">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black text-blue-600">Heritage Artisan</div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-slate-600 font-medium hover:text-blue-700 transition-colors duration-200 active:scale-95 transform transition-transform"
+                    href="#">Shop</a>
+                <a class="text-slate-600 font-medium hover:text-blue-700 transition-colors duration-200 active:scale-95 transform transition-transform"
+                    href="#">Artisans</a>
+                <a class="text-slate-600 font-medium hover:text-blue-700 transition-colors duration-200 active:scale-95 transform transition-transform"
+                    href="#">Our Story</a>
+                <a class="text-slate-600 font-medium hover:text-blue-700 transition-colors duration-200 active:scale-95 transform transition-transform"
+                    href="#">Verification</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden lg:block px-5 py-2.5 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors active:scale-95 transform">Become
+                    an Artisan</button>
+                <div
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant overflow-hidden">
+                    <img class="w-full h-full object-cover"
+                        data-alt="A close-up professional portrait of a confident middle-aged man with a warm smile, representing a verified heritage artisan customer."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUueyz-q8D5BHL5jd5GQM_6xOfkgQbmWFf-GY_jMYsddruf3TrFs3_7feWGTpg-LrwRjhmLeYZToH2wBMJqrF5ilp0TPA7jCPneAu9Q7BlrM7wW8_7Puwz7-hz6NKlWc7nPdbwNBfrtO9ftMnTug_jEkAAfutTYiYJq4-jc0ng5IOmqOQcYp6oQJ8rUDTLOFocBhwoBn_DYetRu2K6Kqph-wXvIaHuUEY52k9CiAo2v5zfiMzNeU4YKOKwgzAhklvaqrW6RJcE3rfL" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row min-h-screen">
+        <aside class="w-full md:w-64 border-r border-outline-variant bg-white flex flex-col py-8 px-4 shrink-0">
+            <nav class="flex-1 space-y-1">
+                <a class="flex items-center gap-3 px-4 py-3 text-primary bg-primary/10 rounded-lg transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="font-bold">Tableau de bord</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-primary rounded-lg transition-colors"
+                    th:href="@{/profile}">
+                    <span class="material-symbols-outlined">person</span>
+                    <span class="font-medium">Profil</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-primary rounded-lg transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">event_available</span>
+                    <span class="font-medium">Mes réservations</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-primary rounded-lg transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">rate_review</span>
+                    <span class="font-medium">Avis laissés</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-primary rounded-lg transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">payments</span>
+                    <span class="font-medium">Moyens de paiement</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-primary rounded-lg transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="font-medium">Paramètres</span>
+                </a>
+            </nav>
+            <div class="mt-auto border-t border-outline-variant pt-6 space-y-1">
+                <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-primary rounded-lg transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">help</span>
+                    <span class="font-medium">Support</span>
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container rounded-lg transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="font-medium">Se déconnecter</span>
+                </a>
+            </div>
+        </aside>
+        <main class="flex-1 px-6 py-12">
+            <section class="mb-12">
+                <div
+                    class="bg-white p-2 rounded-2xl shadow-xl flex flex-col md:flex-row items-center gap-2 border border-slate-100">
+                    <div
+                        class="flex-1 flex items-center px-4 w-full border-b md:border-b-0 md:border-r border-slate-100">
+                        <span class="material-symbols-outlined text-slate-400 mr-3">search</span>
+                        <input class="w-full py-4 border-none focus:ring-0 text-body-base bg-transparent"
+                            placeholder="What service are you looking for?" type="text" />
+                    </div>
+                    <div
+                        class="flex-1 flex items-center px-4 w-full border-b md:border-b-0 md:border-r border-slate-100">
+                        <span class="material-symbols-outlined text-slate-400 mr-3">location_on</span>
+                        <input class="w-full py-4 border-none focus:ring-0 text-body-base bg-transparent"
+                            placeholder="Tunis, TN" type="text" />
+                    </div>
+                    <div class="flex-none flex items-center px-4 w-full md:w-auto">
+                        <span class="material-symbols-outlined text-slate-400 mr-3">star</span>
+                        <select
+                            class="py-4 bg-transparent border-none focus:ring-0 text-body-base font-medium text-slate-600">
+                            <option>Any Rating</option>
+                            <option>4.5+ Stars</option>
+                            <option>4.0+ Stars</option>
+                        </select>
+                    </div>
+                    <button
+                        class="w-full md:w-auto px-10 py-4 bg-primary text-white font-bold rounded-xl active:scale-95 transition-transform">Search</button>
+                </div>
+            </section>
+            <div class="flex items-center justify-between mb-8">
+                <p class="text-body-lg text-slate-500"><span class="font-bold text-slate-900">128</span> artisans found
+                    near <span class="text-blue-600">Tunis</span></p>
+                <div class="flex items-center gap-2">
+                    <span class="text-caption text-slate-400 uppercase tracking-wider font-bold">Sort By</span>
+                    <select class="bg-transparent border-none text-label-bold text-blue-600 focus:ring-0">
+                        <option>Recommended</option>
+                        <option>Top Rated</option>
+                        <option>Price: Low to High</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" th:if="${services}">
+                <div th:each="s : ${services}" class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="Service image" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="/static/images/placeholder.jpg" />
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-white/95 backdrop-blur px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                                <span class="material-symbols-outlined text-emerald-500 text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                <span class="text-caption text-emerald-600 font-bold uppercase" th:text="${s.artisan != null && s.artisan.statut != null ? s.artisan.statut : 'Artisan'}">Verified</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-headline-section text-lg text-slate-900" th:text="${s.nomservice}">Service Name</h3>
+                                <p class="text-body-base text-slate-500" th:text="${s.artisan != null && s.artisan.user != null ? s.artisan.user.nom + ' ' + s.artisan.user.prenom : 'Artisan'}">Artisan Name</p>
+                            </div>
+                            <div class="flex items-center gap-1 bg-blue-50 px-2 py-1 rounded-lg">
+                                <span class="material-symbols-outlined text-blue-600 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="text-label-bold text-blue-700">4.9</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-caption text-slate-400 mb-6">
+                            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span><span th:text="${s.artisan != null && s.artisan.user != null ? s.artisan.user.adresse : 'Tunis, TN'}">Location</span></span>
+                            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">chat</span><span th:text="${s.artisan != null && s.artisan.avis != null ? s.artisan.avis.size() : 0}">0</span> Reviews</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 border-t border-slate-50">
+                            <div>
+                                <p class="text-caption text-slate-400 uppercase font-bold">Prix</p>
+                                <p class="text-lg font-black text-slate-900" th:text="${s.prix}">0</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <a class="w-11 h-11 flex items-center justify-center rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors" th:href="@{/services/{id}(id=${s.idservice})}"><span class="material-symbols-outlined">chat</span></a>
+                                <a class="px-6 py-2.5 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors active:scale-95 transform" th:href="@{/services/{id}(id=${s.idservice})}">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center items-center gap-4">
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:border-blue-600 hover:text-blue-600 transition-all">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-600 text-white font-bold">1</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">2</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">3</button>
+                <span class="text-slate-400">...</span>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">8</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:border-blue-600 hover:text-blue-600 transition-all">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+        </main>
+    </div>
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col gap-2 items-center md:items-start">
+                <div class="text-lg font-bold text-blue-600">Heritage Artisan</div>
+                <p class="font-['Inter'] text-sm text-slate-500">© 2024 Heritage Artisan Marketplace. Bridging ancient
+                    craft and modern reliability.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-slate-500 font-medium hover:text-blue-600 transition-colors inline-block"
+                    href="#">Privacy Policy</a>
+                <a class="text-slate-500 font-medium hover:text-blue-600 transition-colors inline-block" href="#">Terms
+                    of Service</a>
+                <a class="text-slate-500 font-medium hover:text-blue-600 transition-colors inline-block"
+                    href="#">Shipping Info</a>
+                <a class="text-slate-500 font-medium hover:text-blue-600 transition-colors inline-block"
+                    href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

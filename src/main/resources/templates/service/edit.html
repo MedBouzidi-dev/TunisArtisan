@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#9a4100",
+                        "inverse-surface": "#2d3038",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#783100",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-secondary-fixed": "#001a41",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e0e2ec",
+                        "primary-fixed-dim": "#adc7ff",
+                        "surface-tint": "#005bc0",
+                        "secondary": "#475e8c",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#341100",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9ff",
+                        "on-surface": "#191c23",
+                        "on-secondary-fixed-variant": "#2f4673",
+                        "secondary-container": "#b2c9fe",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "on-primary-container": "#fefcff",
+                        "surface-container-high": "#e6e8f2",
+                        "outline": "#727785",
+                        "on-primary-fixed-variant": "#004493",
+                        "surface-dim": "#d8d9e3",
+                        "surface-container": "#ecedf7",
+                        "inverse-primary": "#adc7ff",
+                        "surface-variant": "#e0e2ec",
+                        "on-primary-fixed": "#001a41",
+                        "tertiary-container": "#c15400",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c23",
+                        "on-surface-variant": "#414754",
+                        "on-secondary-container": "#3d5481",
+                        "outline-variant": "#c1c6d6",
+                        "surface": "#f9f9ff",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed-dim": "#afc6fb",
+                        "primary": "#0059bb",
+                        "primary-container": "#1471e6",
+                        "inverse-on-surface": "#eff0fa",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#fffbff",
+                        "tertiary-fixed": "#ffdbcb",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f2f3fd",
+                        "secondary-fixed": "#d8e2ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "1rem",
+                        "section-padding": "5rem",
+                        "stack-lg": "2.5rem",
+                        "container-max": "1280px",
+                        "stack-sm": "0.5rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-base": ["Inter"],
+                        "headline-section": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "caption": ["Inter"],
+                        "display-hero": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }],
+                        "body-base": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }],
+                        "headline-section": ["1.875rem", { "lineHeight": "2.25rem", "fontWeight": "700" }],
+                        "label-bold": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "700" }],
+                        "caption": ["0.75rem", { "lineHeight": "1rem", "fontWeight": "500" }],
+                        "display-hero": ["3.75rem", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "900" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background">
+    <!-- Side Navigation -->
+    <aside
+        class="fixed left-0 top-0 h-full w-64 z-50 bg-surface-container-low dark:bg-inverse-surface flex flex-col border-r border-outline-variant/30 px-4 py-6 shadow-sm">
+        <div class="mb-10 px-2">
+            <h1 class="font-headline-section text-headline-section text-primary dark:text-primary-fixed-dim">Artisan
+                Portal</h1>
+            <p class="font-label-bold text-label-bold text-on-surface-variant opacity-70">Verified Tunisian Craft</p>
+        </div>
+        <nav class="flex-1 space-y-2">
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-all font-label-bold text-label-bold rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+            <!-- Active Link Mapping to 'Services' logic from request -->
+            <a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed-dim bg-secondary-container/30 dark:bg-secondary-container/10 rounded-lg font-label-bold text-label-bold"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="inventory_2"
+                    style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                Product Catalog
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-all font-label-bold text-label-bold rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                Orders
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-all font-label-bold text-label-bold rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+                Analytics
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-all font-label-bold text-label-bold rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+                My Workshop
+            </a>
+        </nav>
+        <div class="mt-auto space-y-2 pt-6 border-t border-outline-variant/30">
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-all font-label-bold text-label-bold rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="help">help</span>
+                Help Center
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant/20 transition-all font-label-bold text-label-bold rounded-lg text-error"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+        </div>
+    </aside>
+    <!-- Main Canvas -->
+    <main class="ml-64 min-h-screen">
+        <!-- Top Bar -->
+        <header
+            class="h-16 flex justify-between items-center px-gutter bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md sticky top-0 z-40 shadow-sm">
+            <div class="flex items-center gap-4">
+                <button
+                    class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">arrow_back</button>
+                <h2 class="font-headline-section text-[1.25rem] text-on-surface">Edit Service</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <div
+                    class="flex items-center gap-2 bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-caption font-label-bold">
+                    <span class="material-symbols-outlined text-[14px]"
+                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    Live
+                </div>
+                <div class="flex gap-2">
+                    <button
+                        class="px-4 py-2 text-primary font-label-bold text-label-bold hover:bg-primary/5 transition-colors rounded-lg">Preview</button>
+                    <button
+                        class="px-6 py-2 bg-primary text-on-primary font-label-bold text-label-bold rounded-lg hover:shadow-lg active:scale-95 transition-all">Update
+                        Service</button>
+                </div>
+            </div>
+        </header>
+        <div class="max-w-[1000px] mx-auto py-10 px-gutter space-y-10">
+            <!-- Content Section: General Info -->
+            <section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/20">
+                <h3 class="font-headline-section text-[1.25rem] mb-6 text-on-surface">Service Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <label class="font-label-bold text-label-bold text-on-surface-variant">Service Title</label>
+                        <input
+                            class="w-full bg-surface-container-low border-none rounded-lg p-3 text-body-base font-body-base focus:ring-2 focus:ring-primary/20"
+                            type="text" value="Sculpture sur Bois de Noyer" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label-bold text-label-bold text-on-surface-variant">Category</label>
+                        <select
+                            class="w-full bg-surface-container-low border-none rounded-lg p-3 text-body-base font-body-base focus:ring-2 focus:ring-primary/20">
+                            <option>Woodworking</option>
+                            <option>Ceramics</option>
+                            <option>Textiles</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="font-label-bold text-label-bold text-on-surface-variant">Detailed
+                            Description</label>
+                        <textarea
+                            class="w-full bg-surface-container-low border-none rounded-lg p-3 text-body-base font-body-base focus:ring-2 focus:ring-primary/20"
+                            rows="4">Traditional hand-carved walnut wood sculpture. This service features intricate geometric patterns inspired by Carthage heritage. Each piece is crafted from premium aged walnut wood sourced from the northwestern regions of Tunisia.</textarea>
+                    </div>
+                </div>
+            </section>
+            <!-- Media Gallery Management (Bento Style) -->
+            <section class="space-y-6">
+                <div class="flex justify-between items-end">
+                    <div>
+                        <h3 class="font-headline-section text-[1.25rem] text-on-surface">Service Gallery</h3>
+                        <p class="font-body-base text-body-base text-on-surface-variant opacity-70">Manage your product
+                            images. Drag to reorder.</p>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 px-4 py-2 bg-secondary-container/20 text-primary border border-primary/20 rounded-lg font-label-bold text-label-bold hover:bg-secondary-container/40 transition-all">
+                        <span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+                        Add New Media
+                    </button>
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <!-- Main Image -->
+                    <div
+                        class="col-span-2 row-span-2 group relative overflow-hidden rounded-xl bg-surface-container shadow-sm border border-outline-variant/30">
+                        <img alt="Main Service Image"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A detailed close-up of an artisan's hands carefully carving complex geometric patterns into a dark, rich walnut wood block. The lighting is warm and directional, highlighting the texture of the wood shavings and the sharp steel of the chisel. The background is a blurred traditional workshop filled with authentic woodworking tools and rustic wooden surfaces. The overall aesthetic is professional, high-contrast, and celebrates manual craftsmanship."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1d8iqROcLAPW7wWKOVWqMI4RqI5L9O9O7AsTOL5XPeBwDN_SoPXey5eh8N6Hkw2wj0Q0H9xNkl6DbqAzD6ETKhcUv-vibBjUEEwPBpe4EXDPYSK4_lcqi83SRPzrhGzXxWXUo2vvWhqqcRMq_TZTgkNE0UqrN07e9ROzZfrBPnj3gwsvHs_OGd5hQvx02yZeJSjO34ky_IP2L1AYgkGybN9i0PCdSIs3Z45MqJiXleQj3ChComw8qTRx37vknNfK7D0yW4h-QwDz6" />
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <button
+                                class="p-2 bg-surface rounded-full text-on-surface hover:text-error transition-colors"><span
+                                    class="material-symbols-outlined">delete</span></button>
+                            <button class="p-2 bg-surface rounded-full text-on-surface"><span
+                                    class="material-symbols-outlined">open_with</span></button>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full text-caption font-label-bold">
+                            Primary</div>
+                    </div>
+                    <!-- Secondary Image 1 -->
+                    <div
+                        class="group relative overflow-hidden rounded-xl bg-surface-container shadow-sm border border-outline-variant/30 aspect-square">
+                        <img alt="Detail View 1"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A high-resolution macro shot of finished wood carvings on a walnut bowl, showing the intricate grain and the smooth, hand-polished finish. The light catches the subtle variations in the wood's deep brown tones. The composition is artistic and minimalist, set against a clean, neutral background that emphasizes the quality of the Digital Heritage brand."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-Kp7mkikNgIHGnMhbaNec8n996H06HSeCdUgeVILFWUfpelWfivhsCci8PO7guXJgnU8_VCOwCPKxV6K8hvw9GwrFtYxNNdOpAKio27E7XjRzxuD9bBMoyjeOecvyFNFRt--VzwrJt9PJPA3ZdrnH5tsuC-ie_d-EqQteuk04pOkms4ozU8zBX_YUr1T7mTZyuN0SwgzaiQIkQyNGt2Bua6S8KyQmULKfEKiiBosYxuZJARMB-2h7F7STM_txyVsYA0qNVqsaGxA2" />
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                            <button
+                                class="p-1.5 bg-surface rounded-full text-on-surface hover:text-error transition-colors"><span
+                                    class="material-symbols-outlined text-[18px]">delete</span></button>
+                            <button class="p-1.5 bg-surface rounded-full text-on-surface"><span
+                                    class="material-symbols-outlined text-[18px]">open_with</span></button>
+                        </div>
+                    </div>
+                    <!-- Secondary Image 2 -->
+                    <div
+                        class="group relative overflow-hidden rounded-xl bg-surface-container shadow-sm border border-outline-variant/30 aspect-square">
+                        <img alt="Workshop View"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="An atmospheric wide shot of a traditional Tunisian artisan workshop where walnut wood is being processed. Natural sunlight streams through a window, illuminating floating dust particles and a workbench covered in chisels, mallets, and half-finished sculptures. The atmosphere is quiet, professional, and deeply rooted in tradition, using a palette of earthy ochres and deep wood browns."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA69E__24fs2_bvA-sr4y7FtfdJ1N2UFM1E_FD09dBcxTXS9h4NdzP8mqYQtiEfE64ciu5qB7YBYiF5G8TBKELJ7f83YqukaE7uv2w6r3CGCF7BQDMUEYQtQ63KP_2hjhTvjxdVedPnDIAJGWb7zk54o1Dewwfs70ziR1uwWvtaQhMP5ndtXTZrY62YmTTEfNssmbAxNwVQSwycD_rhvzQZg3HmNNskCAXM7JSozZC7n6pLVDv86fp9ayKp2NnumHC9rRbdzpAAfa6a" />
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                            <button
+                                class="p-1.5 bg-surface rounded-full text-on-surface hover:text-error transition-colors"><span
+                                    class="material-symbols-outlined text-[18px]">delete</span></button>
+                            <button class="p-1.5 bg-surface rounded-full text-on-surface"><span
+                                    class="material-symbols-outlined text-[18px]">open_with</span></button>
+                        </div>
+                    </div>
+                    <!-- Secondary Image 3 -->
+                    <div
+                        class="group relative overflow-hidden rounded-xl bg-surface-container shadow-sm border border-outline-variant/30 aspect-square">
+                        <img alt="Tooling detail"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A collection of specialized artisan woodworking chisels and gouges arranged neatly on a leather roll. The tools have worn wooden handles and polished steel blades, indicating years of professional use. The scene is shot from a top-down perspective with soft, ambient lighting, creating a clean and organized aesthetic for the artisan portal interface."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_SnVflhJ68IZ_gOgZ6WQuIvdYB_XMBCYQ6ZseyG90i97YyrxyMEwe45DhvYUbnzTNH95prGbJLX6J-JFSi8inoDONr2tMWI5JSPuY30Y6mijhOuYa2ymGIoy0_KPDIHQPry-MLp_Eqs3SJ6NjjWML3SHBH7L9v0BryFa75n_HnZ2JxoyGqmXAz-RgYqJA6cnw2pnSq8qReVcHwjICd9hNrKwJnRv4VaS7zL_XJn7l3seaoprmTtob3AnSa13iXAS130l0AcE1XzUr" />
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                            <button
+                                class="p-1.5 bg-surface rounded-full text-on-surface hover:text-error transition-colors"><span
+                                    class="material-symbols-outlined text-[18px]">delete</span></button>
+                            <button class="p-1.5 bg-surface rounded-full text-on-surface"><span
+                                    class="material-symbols-outlined text-[18px]">open_with</span></button>
+                        </div>
+                    </div>
+                    <!-- Placeholder for adding -->
+                    <button
+                        class="flex flex-col items-center justify-center border-2 border-dashed border-outline-variant/50 rounded-xl hover:border-primary/50 hover:bg-primary/5 transition-all aspect-square group">
+                        <span
+                            class="material-symbols-outlined text-outline-variant group-hover:text-primary mb-2">add</span>
+                        <span
+                            class="font-label-bold text-caption text-on-surface-variant group-hover:text-primary">Upload</span>
+                    </button>
+                </div>
+            </section>
+            <!-- Pricing & Logistics -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20 space-y-4">
+                    <div class="flex items-center gap-2 text-primary">
+                        <span class="material-symbols-outlined">payments</span>
+                        <h4 class="font-label-bold text-label-bold">Pricing</h4>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-caption text-caption text-on-surface-variant">Base Price (TND)</label>
+                        <input
+                            class="w-full bg-surface-container-low border-none rounded-lg p-3 text-body-base font-body-base focus:ring-2 focus:ring-primary/20"
+                            type="number" value="450" />
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20 space-y-4">
+                    <div class="flex items-center gap-2 text-primary">
+                        <span class="material-symbols-outlined">schedule</span>
+                        <h4 class="font-label-bold text-label-bold">Turnaround</h4>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-caption text-caption text-on-surface-variant">Production Time (Days)</label>
+                        <input
+                            class="w-full bg-surface-container-low border-none rounded-lg p-3 text-body-base font-body-base focus:ring-2 focus:ring-primary/20"
+                            type="number" value="14" />
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20 space-y-4">
+                    <div class="flex items-center gap-2 text-primary">
+                        <span class="material-symbols-outlined">local_shipping</span>
+                        <h4 class="font-label-bold text-label-bold">Shipping</h4>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-caption text-caption text-on-surface-variant">Weight Estimate (Kg)</label>
+                        <input
+                            class="w-full bg-surface-container-low border-none rounded-lg p-3 text-body-base font-body-base focus:ring-2 focus:ring-primary/20"
+                            type="number" value="2.5" />
+                    </div>
+                </div>
+            </section>
+            <!-- Danger Zone / Visibility Control -->
+            <section class="bg-error/5 p-8 rounded-xl border border-error/20 flex justify-between items-center">
+                <div>
+                    <h4 class="font-label-bold text-label-bold text-error">Unpublish Service</h4>
+                    <p class="font-body-base text-caption text-on-surface-variant opacity-80">This will hide your
+                        service from the public catalog while keeping all data intact.</p>
+                </div>
+                <button
+                    class="px-4 py-2 text-error border border-error/30 rounded-lg font-label-bold text-label-bold hover:bg-error hover:text-on-error transition-all">Move
+                    to Draft</button>
+            </section>
+            <!-- Footer Actions (Mobile Only or sticky) -->
+            <div class="pt-10 flex justify-end gap-4 border-t border-outline-variant/20">
+                <button
+                    class="px-8 py-3 text-on-surface-variant font-label-bold text-label-bold hover:bg-surface-container-high rounded-lg transition-colors">Discard
+                    Changes</button>
+                <button
+                    class="px-10 py-3 bg-primary text-on-primary font-label-bold text-label-bold rounded-lg hover:shadow-xl active:scale-95 transition-all">Update
+                    Service</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

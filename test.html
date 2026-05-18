@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Détails du service</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container mt-4">
+    <h1 th:text="${service.nomservice}">Service</h1>
+    <p><strong>Description:</strong> <span th:text="${service.descriptionservice}"></span></p>
+    <p><strong>Prix:</strong> <span th:text="${service.prix}"></span> TND</p>
+    <a class="btn btn-secondary" th:href="@{/services}">Retour</a>
+</div>
+</body>
+</html>

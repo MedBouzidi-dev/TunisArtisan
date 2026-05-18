@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -17,6 +18,7 @@ import java.util.Set;
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "iduser")
     private Long Iduser;
     private String nom;
     private String prenom;
@@ -35,4 +37,11 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     private Set<Transaction> transactions;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "users_iduser", referencedColumnName = "iduser"),
+            inverseJoinColumns = @JoinColumn(name = "roles_role", referencedColumnName = "role")
+    )
+    private Set<AppRole> roles = new HashSet<>();
 }

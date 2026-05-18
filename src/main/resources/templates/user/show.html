@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="/js/tailwind_config.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface">
+    <!-- Fixed SideNavBar -->
+    <aside
+        class="w-64 h-screen fixed left-0 top-0 bg-surface-container dark:bg-surface-container-high shadow-sm flex flex-col h-full py-8 z-50">
+        <div class="font-headline-section text-headline-section text-primary dark:text-inverse-primary mb-8 px-6">
+            Artisan Admin
+        </div>
+        <nav class="flex-grow">
+            <ul class="space-y-1">
+                <li>
+                    <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest"
+                        href="#">
+                        <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                        <span class="font-label-bold text-label-bold">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-primary dark:text-inverse-primary bg-primary-container/10 border-r-4 border-primary px-6 py-4 flex items-center gap-3 transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined" data-icon="group">group</span>
+                        <span class="font-label-bold text-label-bold">User Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest"
+                        href="#">
+                        <span class="material-symbols-outlined" data-icon="handyman">handyman</span>
+                        <span class="font-label-bold text-label-bold">Service Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest"
+                        href="#">
+                        <span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                        <span class="font-label-bold text-label-bold">Verifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest"
+                        href="#">
+                        <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                        <span class="font-label-bold text-label-bold">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="px-6 mt-auto">
+            <button
+                class="w-full bg-primary-container text-on-primary-container font-label-bold text-label-bold py-3 rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+                Generate Reports
+            </button>
+        </div>
+    </aside>
+    <!-- Top Navigation Bar -->
+    <header
+        class="flex justify-between items-center w-full h-16 px-gutter ml-64 max-w-[calc(100%-16rem)] fixed top-0 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/30 z-40">
+        <div class="flex items-center flex-1 max-w-xl">
+            <div class="relative w-full group">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                    data-icon="search">search</span>
+                <input
+                    class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 focus:ring-2 focus:ring-primary/20 text-body-base"
+                    placeholder="Search for users, orders, or artisans..." type="text" />
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+            </button>
+            <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+            </button>
+            <div
+                class="h-8 w-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-outline-variant">
+                <img alt="Admin Avatar" class="w-full h-full object-cover"
+                    data-alt="A professional headshot of a corporate administrator, featuring a man with a friendly expression in a modern office setting. The lighting is bright and even, highlighting the clean and efficient atmosphere of a high-end digital marketplace management suite. The overall aesthetic is minimalist and trustworthy."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7WL9J2V1Gvlu4C5aYZV9h5o-tYrHN5Rl29ylgWw7ds0c7H2AlplYQRKjA_-MRmFpIBD_1xTARzAzlgOB-AGldr-XBD__wqRdTO5gj-YPSvU714CdzhYuewflf1Lf44_v44JRZ1ylU6UD5rASNZGyXiCMf90CITKc2jzniUb7MDM1-zNwzOkelpOYI3oBbC7dVF5exJJ0s8jznDcuBarcEluO1Fbkg48F0FFVh_EeJK-QwDO-p4xpjiS_AsodDvYx1hOUs3ZMdEykP" />
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 pt-24 px-8 pb-16 min-h-screen">
+        <div class="max-w-container-max mx-auto space-y-stack-lg">
+            <!-- User Profile Header -->
+            <section
+                class="flex flex-col md:flex-row md:items-end justify-between gap-6 bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/20">
+                <div class="flex items-center gap-6">
+                    <div class="relative">
+                        <img alt="Mourad Mansour"
+                            class="w-32 h-32 rounded-xl object-cover border-4 border-surface shadow-md"
+                            data-alt="A high-quality portrait of Mourad Mansour, a traditional Tunisian artisan, in his sunlit workshop. He has a warm, dignified expression, wearing a simple linen shirt. The background shows glimpses of handcrafted pottery and textiles, emphasizing his authentic craftsmanship. The lighting is soft and natural, suggesting a heritage-focused digital identity."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl995p3ER9T3nWNiDHbUngDSjvfCXu9Fw_Tsnfz-f4HLtqZeTMVswXmMMCd3eOpgq4vVUVDFkzjXUEVbrTeTIKKQCppZZYaSiEMywA2JTQSrTumgl6njfi9kAlVt6GrLePCga-3jyJ7TbiomQJt1VDCtJqex1DlS0JWh7pBJ6cSKNSjq_OLe1LatAhfCfwUSTuG89_cFKlmTVXA7Nd_3EPItdhPvCIg3LJY5wpXd4Z7hD7mUw06DH4poEytHsbP8MqniZ4EVaJOCAC" />
+                        <div
+                            class="absolute -bottom-2 -right-2 bg-emerald-500 text-white p-1 rounded-full border-2 border-surface shadow-sm">
+                            <span class="material-symbols-outlined text-[18px]" data-icon="verified"
+                                data-weight="fill">verified</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-1">
+                            <h1 class="font-headline-section text-headline-section text-on-surface" th:text="${user.nom + ' ' + user.prenom}">User Name</h1>
+                            <span
+                                class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-label-bold text-[0.75rem] uppercase">Active</span>
+                        </div>
+                        <p class="text-on-surface-variant font-body-base flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px]"
+                                data-icon="fingerprint">fingerprint</span>
+                            User ID: <span th:text="${user.iduser}">0</span>
+                        </p>
+                        <p class="text-on-surface-variant font-body-base flex items-center gap-2 mt-1">
+                            <span class="material-symbols-outlined text-[18px]" data-icon="brush">brush</span>
+                            Role: <span th:text="${user.roles != null && !#lists.isEmpty(user.roles) ? #lists.first(user.roles).role : 'USER'}">USER</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="bg-surface-container-high text-primary font-label-bold text-label-bold px-6 py-2.5 rounded-lg hover:bg-primary-container/10 transition-colors flex items-center gap-2 border border-outline-variant/30">
+                        <span class="material-symbols-outlined" data-icon="mail">mail</span>
+                        Message User
+                    </button>
+                    <a class="bg-primary text-on-primary font-label-bold text-label-bold px-6 py-2.5 rounded-lg shadow-md hover:bg-primary/90 transition-colors flex items-center gap-2"
+                        th:href="@{/users/{id}/edit(id=${user.iduser})}">
+                        <span class="material-symbols-outlined" data-icon="edit">edit</span>
+                        Edit Account
+                    </a>
+                </div>
+            </section>
+            <!-- Stats & Details Grid -->
+            <div class="grid grid-cols-12 gap-8">
+                <!-- Left Column: Details & Verification -->
+                <div class="col-span-12 lg:col-span-4 space-y-8">
+                    <!-- Profile Overview Card -->
+                    <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20">
+                        <h2
+                            class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider mb-6">
+                            Profile Overview</h2>
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-outline"
+                                    data-icon="alternate_email">alternate_email</span>
+                                <div>
+                                    <p class="text-caption font-caption text-outline">Email Address</p>
+                                    <p class="font-body-base text-on-surface" th:text="${user.email}">email@example.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-outline" data-icon="phone">phone</span>
+                                <div>
+                                    <p class="text-caption font-caption text-outline">Phone Number</p>
+                                    <p class="font-body-base text-on-surface" th:text="${user.tel}">+216</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-outline"
+                                    data-icon="location_on">location_on</span>
+                                <div>
+                                    <p class="text-caption font-caption text-outline">Location</p>
+                                    <p class="font-body-base text-on-surface" th:text="${user.adresse}">Adresse</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-outline"
+                                    data-icon="calendar_today">calendar_today</span>
+                                <div>
+                                    <p class="text-caption font-caption text-outline">Member Since</p>
+                                    <p class="font-body-base text-on-surface">October 14, 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Verification Status Card -->
+                    <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2
+                                class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">
+                                Verification</h2>
+                            <span
+                                class="bg-emerald-100 text-emerald-700 font-label-bold text-[0.7rem] px-2 py-0.5 rounded">VERIFIED</span>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-emerald-500" data-icon="check_circle"
+                                        data-weight="fill">check_circle</span>
+                                    <span class="font-body-base text-on-surface">National Identity Card</span>
+                                </div>
+                                <button class="text-primary font-label-bold text-caption hover:underline">View</button>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-emerald-500" data-icon="check_circle"
+                                        data-weight="fill">check_circle</span>
+                                    <span class="font-body-base text-on-surface">Artisan Certificate</span>
+                                </div>
+                                <button class="text-primary font-label-bold text-caption hover:underline">View</button>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-emerald-500" data-icon="check_circle"
+                                        data-weight="fill">check_circle</span>
+                                    <span class="font-body-base text-on-surface">Bank Verification</span>
+                                </div>
+                                <button class="text-primary font-label-bold text-caption hover:underline">View</button>
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full mt-6 py-2 border-2 border-outline-variant/30 text-on-surface-variant font-label-bold text-label-bold rounded-lg hover:bg-surface-container transition-colors">
+                            Manage Credentials
+                        </button>
+                    </div>
+                </div>
+                <!-- Right Column: Stats, Activity, Content -->
+                <div class="col-span-12 lg:col-span-8 space-y-8">
+                    <!-- KPI Stats Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div
+                            class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20">
+                            <p class="text-on-surface-variant font-label-bold text-caption mb-1 uppercase">Total
+                                Bookings</p>
+                            <h3 class="text-display-hero text-[2rem] font-black text-primary">142</h3>
+                            <p class="text-emerald-600 text-caption font-label-bold flex items-center gap-1 mt-2">
+                                <span class="material-symbols-outlined text-[16px]"
+                                    data-icon="trending_up">trending_up</span>
+                                +12% this month
+                            </p>
+                        </div>
+                        <div
+                            class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20">
+                            <p class="text-on-surface-variant font-label-bold text-caption mb-1 uppercase">Total Revenue
+                            </p>
+                            <h3 class="text-display-hero text-[2rem] font-black text-on-surface">DT 8,420</h3>
+                            <p class="text-emerald-600 text-caption font-label-bold flex items-center gap-1 mt-2">
+                                <span class="material-symbols-outlined text-[16px]"
+                                    data-icon="trending_up">trending_up</span>
+                                +8.4% growth
+                            </p>
+                        </div>
+                        <div
+                            class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20">
+                            <p class="text-on-surface-variant font-label-bold text-caption mb-1 uppercase">Average
+                                Rating</p>
+                            <h3 class="text-display-hero text-[2rem] font-black text-tertiary">4.9</h3>
+                            <div class="flex gap-0.5 mt-2">
+                                <span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="star"
+                                    data-weight="fill">star</span>
+                                <span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="star"
+                                    data-weight="fill">star</span>
+                                <span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="star"
+                                    data-weight="fill">star</span>
+                                <span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="star"
+                                    data-weight="fill">star</span>
+                                <span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="star"
+                                    data-weight="fill">star</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Linked Content: Artisan Services -->
+                    <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="font-label-bold text-label-bold text-on-surface">Active Services</h2>
+                            <button class="text-primary font-label-bold text-label-bold hover:underline">Add New
+                                Service</button>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Service Card 1 -->
+                            <div
+                                class="group flex border border-outline-variant/30 rounded-lg overflow-hidden hover:border-primary/50 transition-colors">
+                                <img alt="Ceramic Plates"
+                                    class="w-24 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    data-alt="A detailed, close-up photograph of hand-painted Tunisian ceramic plates with intricate blue and white traditional patterns. The pottery is displayed in a brightly lit, professional gallery setting, highlighting the glossy finish and the precision of the artisan's work. The aesthetic is clean, professional, and heritage-focused."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuALaEW0GZkBOE-FYifsyRtq9_XEw8dLIdrv-mLbGQjXIBrI4QKyTk1yApKR-zMtO2XckVx9sIQVuGtRhj9bGkp4j-n2-okVstFQMMLdi1SWXrIAH-lvcb_I-aYApd8eUI-IE2BYbiXwo9jGNg-XNUrhGOX3sqMqjtSGqq16RmOjXMiiKVrhqrV8QDedRpm01Fv836rbSgb2TIzRKIBtOsXBcSrPMcBAP-KAkH_rOuLorUqu92S6WGxCi32XHcn7803JwAplRzkZHWLN" />
+                                <div class="p-3 flex flex-col justify-center">
+                                    <h4 class="font-label-bold text-on-surface">Hand-Painted Blue Plates</h4>
+                                    <p class="text-caption text-on-surface-variant mb-2">Pottery • DT 45.00</p>
+                                    <span
+                                        class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full w-fit">IN
+                                        STOCK</span>
+                                </div>
+                            </div>
+                            <!-- Service Card 2 -->
+                            <div
+                                class="group flex border border-outline-variant/30 rounded-lg overflow-hidden hover:border-primary/50 transition-colors">
+                                <img alt="Terracotta Vase"
+                                    class="w-24 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    data-alt="A beautiful handmade Tunisian terracotta vase with rustic textures and earthy tones. The vase is positioned on a minimalist stone pedestal within a light-filled studio. The lighting is soft and cinematic, emphasizing the handcrafted details and the authentic Mediterranean feel of the artisan's craft."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP6wCmLN7LovjvOThh1ci1L0tQ5x7jKLDk1vBSJRaXWC1EkldlohoK-PeKDLA82BVKhntXqu4q4vnWk5Dgl502i64Kedv3cSKTZM86gIeFcs3xK6RxMOnJQK1SYk-LMAcw07wNFmTBkQ65CyLTzJkDaPyBJFcVXP4IZ683Tw7GSAhnN-gheoFg08uhfSUkc35cF7Ma-ZXv51p7DI1oW9XbfWli7iwiVMOPz0HjaDGCviO2sJy7UqwGNGNxFea4Q6FqDb4UI8fdG07a" />
+                                <div class="p-3 flex flex-col justify-center">
+                                    <h4 class="font-label-bold text-on-surface">Classical Terracotta Vase</h4>
+                                    <p class="text-caption text-on-surface-variant mb-2">Pottery • DT 120.00</p>
+                                    <span
+                                        class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full w-fit">IN
+                                        STOCK</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Recent Activity Table -->
+                    <div
+                        class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden">
+                        <div class="p-6 border-b border-outline-variant/30">
+                            <h2 class="font-label-bold text-label-bold text-on-surface">Recent Activity Log</h2>
+                        </div>
+                        <table class="w-full text-left">
+                            <thead
+                                class="bg-surface-container-low text-on-surface-variant font-label-bold text-caption uppercase tracking-wider">
+                                <tr>
+                                    <th class="px-6 py-3">Event</th>
+                                    <th class="px-6 py-3">Details</th>
+                                    <th class="px-6 py-3">Date</th>
+                                    <th class="px-6 py-3 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant/30 font-body-base text-[0.9rem]">
+                                <tr class="hover:bg-surface-container-low transition-colors">
+                                    <td class="px-6 py-4 flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-primary-container/10 text-primary flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-[18px]"
+                                                data-icon="inventory_2">inventory_2</span>
+                                        </div>
+                                        Service updated
+                                    </td>
+                                    <td class="px-6 py-4 text-on-surface-variant">Modified "Classical Terracotta Vase"
+                                        stock level</td>
+                                    <td class="px-6 py-4 text-on-surface-variant">Today, 10:24 AM</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button class="text-primary font-label-bold hover:underline">Details</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container-low transition-colors">
+                                    <td class="px-6 py-4 flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-secondary-container/20 text-secondary flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-[18px]"
+                                                data-icon="login">login</span>
+                                        </div>
+                                        New Login
+                                    </td>
+                                    <td class="px-6 py-4 text-on-surface-variant">Login from Chrome on Linux (IP:
+                                        197.0.xx.xx)</td>
+                                    <td class="px-6 py-4 text-on-surface-variant">Yesterday, 06:15 PM</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button class="text-primary font-label-bold hover:underline">Details</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container-low transition-colors">
+                                    <td class="px-6 py-4 flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                                            <span class="material-symbols-outlined text-[18px]"
+                                                data-icon="payments">payments</span>
+                                        </div>
+                                        Payout Processed
+                                    </td>
+                                    <td class="px-6 py-4 text-on-surface-variant">Withdrawal of DT 450.00 to BIAT Bank
+                                    </td>
+                                    <td class="px-6 py-4 text-on-surface-variant">Oct 20, 2023</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button class="text-primary font-label-bold hover:underline">Details</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="p-4 bg-surface-container-low text-center">
+                            <button class="text-primary font-label-bold text-label-bold hover:underline">View Full Audit
+                                Trail</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Dangerous Zone -->
+            <section class="bg-error-container/10 p-8 rounded-xl border border-error/20">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="font-headline-section text-[1.25rem] text-error mb-1">Administrative Controls</h2>
+                        <p class="text-on-surface-variant font-body-base">Restrict or terminate this user's access to
+                            the marketplace.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <button
+                            class="border border-error text-error font-label-bold text-label-bold px-6 py-2.5 rounded-lg hover:bg-error/5 transition-colors">
+                            Suspend Account
+                        </button>
+                        <button
+                            class="bg-error text-on-error font-label-bold text-label-bold px-6 py-2.5 rounded-lg shadow-md hover:opacity-90 transition-opacity">
+                            Permanent Ban
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

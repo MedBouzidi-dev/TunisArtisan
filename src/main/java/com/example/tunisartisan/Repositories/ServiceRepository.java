@@ -4,5 +4,5 @@ import com.example.tunisartisan.Entities.Service;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ServiceRepository extends JpaRepository<Service,Long> {
-    public Service findByIdService(Long id);
+    public Service findByIdservice(Long id);
 }

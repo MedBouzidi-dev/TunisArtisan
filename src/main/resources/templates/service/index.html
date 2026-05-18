@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mes services</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Mes services</h1>
+    <a class="btn btn-primary mb-3" th:href="@{/services/new}">Créer un service</a>
+    <div th:if="${services == null or #lists.isEmpty(services)}">
+        <p>Aucun service disponible.</p>
+    </div>
+    <table class="table" th:if="${services}">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="s : ${services}">
+            <td th:text="${s.nomservice}"></td>
+            <td th:text="${s.descriptionservice}"></td>
+            <td th:text="${s.prix}"></td>
+            <td>
+                <a class="btn btn-sm btn-info" th:href="@{/services/{id}(id=${s.idservice})}">Voir</a>
+                <a class="btn btn-sm btn-secondary" th:href="@{/services/{id}/edit(id=${s.idservice})}">Edit</a>
+                <form th:action="@{/services/{id}/delete(id=${s.idservice})}" method="post" style="display:inline">
+                    <button class="btn btn-sm btn-danger" type="submit">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="/js/tailwind_config.js"></script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-base">
+    <!-- TopNavBar -->
+    <nav
+        class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 shadow-sm">
+        <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-16">
+            <div class="flex items-center gap-stack-lg">
+                <span class="font-headline-section text-primary dark:text-inverse-primary tracking-tight">Heritage
+                    Artisans</span>
+                <div class="hidden md:flex gap-stack-md">
+                    <a class="text-on-surface-variant dark:text-surface-variant font-body-base hover:text-primary transition-colors"
+                        href="#">Marketplace</a>
+                    <a class="text-on-surface-variant dark:text-surface-variant font-body-base hover:text-primary transition-colors"
+                        href="#">Artisans</a>
+                    <a class="text-on-surface-variant dark:text-surface-variant font-body-base hover:text-primary transition-colors"
+                        href="#">Workshops</a>
+                    <a class="text-on-surface-variant dark:text-surface-variant font-body-base hover:text-primary transition-colors"
+                        href="#">Heritage</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-stack-md">
+                <div class="relative hidden lg:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+                    <input
+                        class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none rounded-full text-body-base focus:ring-2 focus:ring-primary w-64"
+                        placeholder="Search crafts..." type="text" />
+                </div>
+                <button
+                    class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all">shopping_cart</button>
+                <button
+                    class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all">notifications</button>
+                <img alt="Artisan Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant"
+                    data-alt="A professional headshot of a middle-aged artisan with a warm, welcoming expression. He has short dark hair and a neatly trimmed beard. The background is a soft-focus workshop environment with warm wood tones and professional lighting, conveying a sense of expertise and craftsmanship in a modern light-mode aesthetic."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-YTSjhsmnSbDjm-DRN3T-rXhzi9mvVZvm3izG-xrzIuiqNMYwyMfHj9SCjavVQVSzaGsyGFxWKKVfLmTG6_-dIJInZlcFU3RrdZ3oC5BIyn3krzAbWnYee6M8YkxBUc7g87HlxMLImqr9--BbPWUq_jFeJFEMzCjF-HOCwadctzuSSaCCYAsNOrSklSNls-pcv-CpWZz4S97yEViuTclTC-2Nv5Ypu_UGFkE1C2O7rbwMSUklmlQQ4SECxY-ZsVtZyki0mLNWL6Oe" />
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-container-max mx-auto px-gutter py-stack-lg">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 mb-stack-lg overflow-x-auto whitespace-nowrap">
+            <a class="text-caption font-caption text-on-surface-variant hover:text-primary" href="#">Home</a>
+            <span class="material-symbols-outlined text-sm text-outline">chevron_right</span>
+            <a class="text-caption font-caption text-on-surface-variant hover:text-primary" href="#">Woodworking</a>
+            <span class="material-symbols-outlined text-sm text-outline">chevron_right</span>
+            <span class="text-caption font-caption text-primary">Sculpted Furniture</span>
+        </nav>
+        <!-- Header Section -->
+        <header class="mb-stack-lg border-b border-outline-variant/20 pb-stack-md">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
+                <div>
+                    <h1 class="font-headline-section text-headline-section text-on-surface mb-2" th:text="${service.nomservice}">Service Title</h1>
+                    <div class="flex items-center gap-2">
+                        <span class="font-label-bold text-label-bold text-primary" th:text="${service.artisan != null && service.artisan.user != null ? service.artisan.user.nom + ' ' + service.artisan.user.prenom : 'Artisan'}">Artisan Name</span>
+                        <div class="flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
+                            <span class="material-symbols-outlined text-[16px] text-emerald-600" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700" th:text="${service.artisan != null && service.artisan.statut != null ? service.artisan.statut : 'Verified'}">Verified Master</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 text-on-surface-variant">
+                    <div class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="font-label-bold text-label-bold" th:text="${service.artisan != null && service.artisan.avis != null && #lists.size(service.artisan.avis) > 0 ? '' : 'N/A'}">N/A</span>
+                        <span class="text-caption font-caption">(<span th:text="${service.artisan != null && service.artisan.avis != null ? service.artisan.avis.size() : 0}">0</span> reviews)</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="material-symbols-outlined hover:text-primary transition-all">share</button>
+                        <button class="material-symbols-outlined hover:text-primary transition-all">favorite</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg items-start">
+            <!-- Left Column: Media & Description -->
+            <div class="lg:col-span-8 space-y-stack-lg">
+                <!-- Gallery Section -->
+                <div class="space-y-4">
+                    <div class="rounded-xl overflow-hidden bg-surface-container-high shadow-lg">
+                        <img class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700" th:alt="${service.nomservice}" src="/static/images/placeholder.jpg" />
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div
+                            class="rounded-lg overflow-hidden h-32 bg-surface-container-high shadow-sm hover:ring-2 ring-primary transition-all cursor-pointer">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A finished Tunisian walnut chest with deeply carved traditional arabesque patterns. The wood glows with a rich, dark satin finish under soft studio lighting. The background is a minimalist, modern room with light-colored walls, highlighting the heritage piece as a focal point of luxury and cultural history."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRn58jvrswa63mMvoqOJtrbdls0GMbUEGZbt6HUp-Qr_QrcQ1-yLFro26zemgA6Djgps4W_Bx2VhFzTofoyD7y0Q2S-h_j8cXouJyP-d2v_gfCZgQyD8nu4ggG9ynWioMsKEP0qIHFStxEagScnsyrFpXCWW7qru4fxx0gRJYM6q4zmIRXdZ3N6VlEycoD_0Ay2xp1_5gzmzXrP8a5wl9zSHR7GSG_0GPSWbwUVO3sPmEGHIzbsKzruRd3mH_2_AKqBZg3r1U_kHMR" />
+                        </div>
+                        <div
+                            class="rounded-lg overflow-hidden h-32 bg-surface-container-high shadow-sm hover:ring-2 ring-primary transition-all cursor-pointer">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A collection of specialized wood carving tools laid out neatly on a rustic wooden workbench. The tools include various sizes of chisels and gouges with polished wooden handles. The lighting is soft and natural, coming from a nearby window, creating a serene and professional workspace environment."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqcfvmUlqbD364c9iGk5tKmRDI1U5ff8qKlehhEILUz-VBojjUopcUL-N7kwUFe9dE1xfdfxvxC6_KyMVn61Kzzgl8O95q6MCLBOocJfS-sZ3-gNY5ISiF1NvusnqfgIXo75itUzACg4YSEbn1cXDb4h9uHompWi096x75ApxvcBA0XpLOw6iGnYqIbwEQhs6KUA7Ol9rP_nNgr5j796U5ILNTWnqoVGGrEGbtTzg8pE47ApRxMaHmBFf17JDDNq6PgVKQ1RvpABYa" />
+                        </div>
+                        <div
+                            class="rounded-lg overflow-hidden h-32 bg-surface-container-high shadow-sm hover:ring-2 ring-primary transition-all cursor-pointer">
+                            <img class="w-full h-full object-cover"
+                                data-alt="A detailed shot showing the process of applying natural oil to a finished walnut wood sculpture. The oil enhances the deep, swirling grain of the walnut, giving it a vibrant and healthy appearance. The scene is bright and airy, reflecting a commitment to high-quality materials and authentic artisanal methods."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1nwIGK0ZHFgmXXifxs1X-O7NMB-EXUGDbk7Dgk2gXki2iuyktPVpE6wIhcydWTxSq58dJ4DhiGckXUkQyOLYKhiR4ldpBJvoyqeimsG32iwgT8wdtrb3QNjVvJhE9TsZW8sfOS-PBvgwCoQ4a19iA9jqHly6yiNgGZqU6o7PKpP9okK7T1gvVvROpkf-yoT-tZhiO89KxzKGd6F21W6WhY4WaSYg8nx2LY1gPOy4-TfzMcK5QokS5xvJDJga7XzVKKRGvz0CA29N6" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Description -->
+                <section class="prose prose-slate max-w-none">
+                    <h2 class="font-headline-section text-headline-section text-on-surface mb-stack-md" th:text="${service.nomservice}">Service subtitle</h2>
+                    <div class="space-y-4 text-on-surface-variant font-body-base leading-relaxed">
+                        <p th:text="${service.descriptionservice}">Service description</p>
+                    </div>
+                </section>
+                <!-- Reviews Section -->
+                <section class="pt-stack-lg border-t border-outline-variant/30">
+                    <div class="flex items-center justify-between mb-stack-md">
+                        <h2 class="font-headline-section text-headline-section text-on-surface">Reviews</h2>
+                        <button class="text-primary font-label-bold text-label-bold hover:underline">Write a
+                            Review</button>
+                    </div>
+                    <div class="space-y-stack-md">
+                        <div th:if="${service.artisan != null and service.artisan.avis != null}">
+                            <div th:each="a : ${service.artisan.avis}" class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/20">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold" th:text="${a.user != null ? (a.user.nom != null ? a.user.nom.substring(0,1) : 'U') : 'U'}">U</div>
+                                        <div>
+                                            <div class="font-label-bold text-on-surface" th:text="${a.user != null ? a.user.nom + ' ' + a.user.prenom : 'Utilisateur'}">User Name</div>
+                                            <div class="text-caption font-caption text-outline" th:text="${a.date != null ? #dates.format(a.date,'MMMM yyyy') : ''}"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex text-primary" th:remove="tag">
+                                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;" th:each="i : ${#numbers.sequence(1,a.note)}">star</span>
+                                    </div>
+                                </div>
+                                <p class="text-on-surface-variant font-body-base mb-4 italic" th:text="${a.commentaire}">Review text</p>
+                                <div class="flex gap-2" th:if="${a.photos != null}">
+                                    <img th:each="p : ${a.photos}" class="w-16 h-16 rounded-md object-cover shadow-sm" th:src="${p}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-6 w-full py-3 border border-outline-variant rounded-lg font-label-bold text-on-surface hover:bg-surface-container-high transition-colors">View
+                        All <span th:text="${service.artisan != null && service.artisan.avis != null ? service.artisan.avis.size() : 0}">0</span> Reviews</button>
+                </section>
+            </div>
+            <!-- Right Column: Sidebar -->
+            <aside class="lg:col-span-4 lg:sticky lg:top-24 space-y-stack-md">
+                <!-- Booking Card -->
+                <div
+                    class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl shadow-xl p-6 overflow-hidden">
+                    <div class="mb-6">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-headline-section font-headline-section text-on-surface">Starting from
+                                <span th:text="${service.prix}">0</span> TND</span>
+                            <span class="text-on-surface-variant">/job</span>
+                        </div>
+                        <p class="text-caption font-caption text-outline mt-1">*Custom project quotes available upon
+                            request</p>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <button
+                            class="w-full bg-primary text-white py-4 rounded-xl font-label-bold hover:bg-primary-container hover:shadow-lg transition-all active:scale-95">Book
+                            Now</button>
+                        <button
+                            class="w-full bg-primary/10 text-primary py-4 rounded-xl font-label-bold hover:bg-primary/20 transition-all">Message
+                            Artisan</button>
+                    </div>
+                    <div class="pt-6 border-t border-outline-variant/20 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">draw</span>
+                            <div>
+                                <span class="block font-label-bold text-on-surface">100% Hand-carved</span>
+                                <span class="text-caption text-on-surface-variant">No CNC or automated machinery
+                                    used.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">history_edu</span>
+                            <div>
+                                <span class="block font-label-bold text-on-surface">Traditional Techniques</span>
+                                <span class="text-caption text-on-surface-variant">Authentic heritage methods.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">forest</span>
+                            <div>
+                                <span class="block font-label-bold text-on-surface">Authentic Tunisian Walnut</span>
+                                <span class="text-caption text-on-surface-variant">Sustainably sourced local
+                                    timber.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Heritage Badge / Trust Section -->
+                <div class="bg-primary/5 rounded-xl p-6 border border-primary/10">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-primary">verified_user</span>
+                        <span class="font-label-bold text-on-surface">Heritage Guaranteed</span>
+                    </div>
+                    <p class="text-caption text-on-surface-variant">All projects with Mourad Mansour include a Digital
+                        Certificate of Authenticity, verifying the artisan's identity and the materials used.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-container-highest dark:bg-surface-container-lowest mt-section-padding">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stack-lg px-gutter py-section-padding max-w-container-max mx-auto">
+            <div class="space-y-4">
+                <span
+                    class="font-headline-section text-on-surface dark:text-on-surface-variant block mb-stack-md">Heritage
+                    Artisans</span>
+                <p class="text-body-base text-on-surface-variant">© 2024 Heritage Artisans Tunisia. Preserving
+                    craftsmanship through digital innovation.</p>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-label-bold text-primary">Navigation</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline transition-all"
+                            href="#">Marketplace</a></li>
+                    <li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline transition-all"
+                            href="#">Artisans</a></li>
+                    <li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline transition-all"
+                            href="#">Heritage Projects</a></li>
+                    <li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline transition-all"
+                            href="#">Workshops</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-label-bold text-primary">Support</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline transition-all"
+                            href="#">Terms of Service</a></li>
+                    <li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline transition-all"
+                            href="#">Privacy Policy</a></li>
+                    <li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline transition-all"
+                            href="#">Shipping &amp; Returns</a></li>
+                    <li><a class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline transition-all"
+                            href="#">Contact Support</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-label-bold text-primary">Artisan Portal</h4>
+                <p class="text-caption text-on-surface-variant mb-2">Are you a master craftsperson? Join our verified
+                    network.</p>
+                <button
+                    class="bg-primary text-white px-6 py-2 rounded-lg font-label-bold hover:shadow-md transition-all">Join
+                    Marketplace</button>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

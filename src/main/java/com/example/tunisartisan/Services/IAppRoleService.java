@@ -5,9 +5,9 @@ import java.util.List;
 
 public interface IAppRoleService {
     AppRole saveAppRole(AppRole appRole);
-    AppRole getAppRoleById(Long id);
+    AppRole getAppRoleById(String id);
     List<AppRole> getAllAppRoles();
-    AppRole updateAppRole(Long id, AppRole appRole);
-    void deleteAppRole(Long id);
+    AppRole updateAppRole(String id, AppRole appRole);
+    void deleteAppRole(String id);
 }
 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Inscription | Heritage Artisan</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="/js/tailwind_config.js"></script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .auth-card-blur {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-base text-on-surface antialiased min-h-screen flex flex-col">
+<!-- Auth Shell suppressed as per mandate for focused journeys -->
+<main class="flex-grow flex items-center justify-center py-section-padding px-gutter relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-secondary-container/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary-container/10 rounded-full blur-[120px]"></div>
+    </div>
+    <div class="w-full max-w-[1000px] grid md:grid-cols-2 bg-surface-container-lowest rounded-xl shadow-2xl overflow-hidden relative z-10 border border-outline-variant/30">
+        <!-- Left Side: Visual/Branding -->
+        <div class="hidden md:block relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent z-10"></div>
+            <img alt="Artisan Craftsmanship" class="absolute inset-0 w-full h-full object-cover" data-alt="A high-quality close-up of a traditional Tunisian ceramicist painting intricate blue patterns on a white glazed plate. The scene is bathed in warm natural afternoon light coming through a studio window, highlighting the texture of the clay and the fine bristles of the brush. The aesthetic is clean, professional, and celebrates heritage craft with a modern photographic depth of field. The color palette is dominated by cobalt blue and ivory white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_YnDwI0NHK3Gfk3flxXKAbQsm87qz2s1xTaXfcwe3GJYhVYet-D3mdnsznHpc-l4I_U9SJpmQcssXu-jtv-Bp9I0y03BL-gKtbyDurgYO9BKBn6K2aDgqdy7ieMjJlUwyhAOjaV6OyfnLWkPvGMofoK6sGnvOfHiMidEV9pRsQ3rkrDdAdYHoA0aXoAHJWPEVUL-blTOmS4QJN8aTPBVh36CAVdvm680fsJMeN8Py0lgjR7Fk5vm1VzyKzS6H-4vJjJuIwPozrVs-"/>
+            <div class="relative z-20 h-full flex flex-col justify-end p-stack-lg text-on-primary">
+                <div class="mb-stack-md">
+                    <span class="font-bold text-2xl tracking-tighter">Heritage Artisan</span>
+                </div>
+                <h2 class="font-headline-section text-headline-section mb-stack-sm text-white">Rejoignez notre communauté</h2>
+                <p class="font-body-base text-body-base opacity-90 max-w-sm text-white">Connectez-vous au savoir-faire ancestral tunisien à travers une plateforme moderne et sécurisée.</p>
+            </div>
+        </div>
+        <!-- Right Side: Registration Form -->
+        <div class="p-stack-lg md:p-12 flex flex-col justify-center">
+            <div class="mb-stack-lg">
+                <h1 class="font-headline-section text-headline-section text-on-surface mb-2">Créer un compte</h1>
+                <p class="font-body-base text-body-base text-on-surface-variant">Prêt à faire partie de l'aventure ?</p>
+            </div>
+            <form class="space-y-stack-md" method="post" th:action="@{/register}">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                <div th:if="${error}" class="mb-4 p-3 bg-error-container text-error rounded" th:text="${error}"></div>
+                <!-- Account Type Selection (Bento-style Choice) -->
+                <div class="grid grid-cols-2 gap-stack-sm mb-stack-md">
+                    <label class="relative cursor-pointer group">
+                        <input checked="" class="peer sr-only" name="accountType" type="radio" value="client"/>
+                        <div class="flex flex-col items-center justify-center p-4 border-2 border-outline-variant rounded-lg transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary-container peer-checked:text-on-primary-container group-hover:bg-surface-container-low">
+                            <span class="material-symbols-outlined mb-2 text-2xl">person</span>
+                            <span class="font-label-bold text-caption">Je suis un Client</span>
+                        </div>
+                    </label>
+                    <label class="relative cursor-pointer group">
+                        <input class="peer sr-only" name="accountType" type="radio" value="artisan"/>
+                        <div class="flex flex-col items-center justify-center p-4 border-2 border-outline-variant rounded-lg transition-all duration-200 peer-checked:border-primary peer-checked:bg-primary-container peer-checked:text-on-primary-container group-hover:bg-surface-container-low">
+                            <span class="material-symbols-outlined mb-2 text-2xl" data-weight="fill">storefront</span>
+                            <span class="font-label-bold text-caption">Je suis un Artisan</span>
+                        </div>
+                    </label>
+                </div>
+                <!-- Input Fields -->
+                <div class="space-y-4">
+                    <div class="relative">
+                        <label class="block font-label-bold text-caption text-on-surface-variant mb-1" for="nom">Nom</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-outline text-xl">person_outline</span>
+                            <input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/60 shadow-sm" id="nom" name="nom" placeholder="Ben Salem" type="text"/>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <label class="block font-label-bold text-caption text-on-surface-variant mb-1" for="prenom">Prénom</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-outline text-xl">badge</span>
+                            <input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/60 shadow-sm" id="prenom" name="prenom" placeholder="Hedi" type="text"/>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <label class="block font-label-bold text-caption text-on-surface-variant mb-1" for="userName">Nom d'utilisateur</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-outline text-xl">alternate_email</span>
+                            <input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/60 shadow-sm" id="userName" name="userName" placeholder="hedi" type="text"/>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <label class="block font-label-bold text-caption text-on-surface-variant mb-1" for="email">Adresse Email</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-outline text-xl">mail</span>
+                            <input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/60 shadow-sm" id="email" name="email" placeholder="hedi@domaine.tn" type="email"/>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <label class="block font-label-bold text-caption text-on-surface-variant mb-1" for="phone">Numéro de Téléphone</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-outline text-xl">call</span>
+                            <input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/60 shadow-sm" id="phone" name="tel" placeholder="+216 20 000 000" type="tel"/>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <label class="block font-label-bold text-caption text-on-surface-variant mb-1" for="adresse">Adresse</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-outline text-xl">home</span>
+                            <input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/60 shadow-sm" id="adresse" name="adresse" placeholder="Tunis, Tunisie" type="text"/>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <label class="block font-label-bold text-caption text-on-surface-variant mb-1" for="password">Mot de passe</label>
+                        <div class="relative flex items-center">
+                            <span class="material-symbols-outlined absolute left-3 text-outline text-xl">lock</span>
+                            <input class="w-full pl-10 pr-12 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/60 shadow-sm" id="password" name="password" placeholder="••••••••" type="password"/>
+                            <span class="material-symbols-outlined absolute right-3 text-outline cursor-pointer hover:text-primary transition-colors">visibility</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- T&C Checkbox -->
+                <div class="flex items-start gap-3 py-2">
+                    <input class="mt-1 h-5 w-5 rounded border-outline-variant text-primary focus:ring-primary" id="terms" type="checkbox"/>
+                    <label class="font-body-base text-caption text-on-surface-variant" for="terms">
+                        J'accepte les <a class="text-primary font-label-bold hover:underline" href="#">Conditions d'utilisation</a> et la politique de confidentialité de Heritage Artisan.
+                    </label>
+                </div>
+                <!-- Submit Button -->
+                <button class="w-full py-4 bg-primary text-on-primary font-label-bold rounded-lg shadow-lg hover:bg-primary-container active:scale-[0.98] transform transition-all duration-200 mt-2" type="submit">
+                    Créer mon compte
+                </button>
+                <!-- Login Link -->
+                <div class="text-center pt-stack-md">
+                    <p class="font-body-base text-caption text-on-surface-variant">
+                        Déjà inscrit ? <a class="text-primary font-label-bold hover:underline" th:href="@{/login}">Se connecter</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<!-- Footer Component from Shared JSON -->
+<footer class="bg-white border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex flex-col items-center md:items-start">
+            <span class="text-lg font-bold text-blue-600 mb-2">Heritage Artisan</span>
+            <p class="font-['Inter'] text-sm text-slate-500 text-center md:text-left">
+                © 2024 Heritage Artisan Marketplace. Bridging ancient craft and modern reliability.
+            </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a class="font-['Inter'] text-sm text-slate-500 hover:text-blue-600 transition-colors" href="#">Privacy Policy</a>
+            <a class="font-['Inter'] text-sm text-slate-500 hover:text-blue-600 transition-colors" href="#">Terms of Service</a>
+            <a class="font-['Inter'] text-sm text-slate-500 hover:text-blue-600 transition-colors" href="#">Shipping Info</a>
+            <a class="font-['Inter'] text-sm text-slate-500 hover:text-blue-600 transition-colors" href="#">Contact Us</a>
+        </div>
+    </div>
+</footer>
+</body></html>

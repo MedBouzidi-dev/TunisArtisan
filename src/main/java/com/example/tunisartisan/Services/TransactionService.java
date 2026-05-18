@@ -32,7 +32,7 @@ public class TransactionService implements ITransactionService {
     @Override
     public Transaction updateTransaction(Long id, Transaction transaction) {
         if (transactionRepository.existsById(id)) {
-            transaction.setId(id);
+            transaction.setIdtransaction(id);
             return transactionRepository.save(transaction);
         }
         return null;
@@ -43,4 +43,3 @@ public class TransactionService implements ITransactionService {
         transactionRepository.deleteById(id);
     }
 }
-

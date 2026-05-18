@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="/js/tailwind_config.js"></script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #f9f9ff;
+        }
+    </style>
+</head>
+
+<body class="font-body-base text-on-background">
+    <!-- SideNavBar (Execution from JSON) -->
+    <aside
+        class="w-64 h-screen fixed left-0 top-0 bg-surface-container dark:bg-surface-container-high shadow-sm flex flex-col h-full py-8">
+        <div class="font-headline-section text-headline-section text-primary dark:text-inverse-primary mb-8 px-4">
+            Artisan Admin
+        </div>
+        <nav class="flex-grow space-y-1">
+            <!-- Dashboard (Inactive) -->
+            <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest transition-colors duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                <span class="font-label-bold text-label-bold">Dashboard</span>
+            </a>
+            <!-- User Management (Active) -->
+            <a class="text-primary dark:text-inverse-primary bg-primary-container/10 border-r-4 border-primary px-6 py-4 flex items-center gap-3 transition-all scale-[0.98] transition-transform duration-150"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="group"
+                    style="font-variation-settings: 'FILL' 1;">group</span>
+                <span class="font-label-bold text-label-bold">User Management</span>
+            </a>
+            <!-- Service Management (Inactive) -->
+            <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest transition-colors duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="handyman">handyman</span>
+                <span class="font-label-bold text-label-bold">Service Management</span>
+            </a>
+            <!-- Verifications (Inactive) -->
+            <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest transition-colors duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                <span class="font-label-bold text-label-bold">Verifications</span>
+            </a>
+            <!-- Settings (Inactive) -->
+            <a class="text-on-surface-variant dark:text-surface-variant px-6 py-4 flex items-center gap-3 transition-all hover:bg-surface-container-highest dark:hover:bg-surface-container-lowest transition-colors duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                <span class="font-label-bold text-label-bold">Settings</span>
+            </a>
+        </nav>
+        <div class="px-6 mt-auto">
+            <button
+                class="w-full bg-primary text-on-primary font-label-bold text-label-bold py-3 rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+                Generate Reports
+            </button>
+        </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="ml-64 min-h-screen flex flex-col">
+        <!-- TopNavBar (Execution from JSON) -->
+        <header
+            class="flex justify-between items-center w-full h-16 px-gutter bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/30 sticky top-0 z-50">
+            <div class="flex items-center gap-8">
+                <span
+                    class="font-label-bold text-label-bold text-primary dark:text-inverse-primary uppercase tracking-wider">Heritage
+                    Admin</span>
+                <div class="relative focus-within:ring-2 focus-within:ring-primary/20 rounded-lg">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+                    <input
+                        class="bg-surface-container-low border-none rounded-lg py-1.5 pl-10 pr-4 w-64 text-body-base focus:ring-0"
+                        placeholder="Search system records..." type="text" />
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                </button>
+                <button class="text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+                </button>
+                <div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+                    <img alt="Administrator Avatar" class="w-full h-full object-cover"
+                        data-alt="A professional close-up headshot of a corporate administrator in a bright, modern office setting. The lighting is soft and high-key, reflecting a light-mode UI aesthetic. The background is slightly blurred, showing hints of a clean architectural space with neutral tones. The subject has a confident expression, conveying trust and authority within a sophisticated digital marketplace environment."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnzO965xVz-nd8lMvlXqT1DRXjHaPcy4r2-YFgmxV6jObeHlIstg8YwzBngS4wKzEPd-yQYB_1zGE35qUow-gwxafFnY_OAo4tMVHPY9uwRY43CxAPrn_hCuDxbjGl3ej2ujjWmcYKpN2SOvaQSHONomNUTpvAqOk7NHNEHYBQSAnvOGzF6sZIaw6cX58ib2yTVUNbhu4QERUaTX-zacLsrNVRYMB6stacy71kbqgiM32XCiDHVa4QAKPjh_U3b_-V9XVeaNFJmq6c" />
+                </div>
+            </div>
+        </header>
+        <!-- Content Canvas -->
+        <section class="p-gutter max-w-container-max mx-auto w-full flex flex-col gap-stack-lg py-12">
+            <!-- Page Header & Actions -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h1 class="font-headline-section text-headline-section text-on-surface">User Management</h1>
+                    <p class="text-on-surface-variant text-body-base">Review, verify, and manage the access levels of
+                        all platform participants.</p>
+                </div>
+                <a class="bg-primary text-on-primary font-label-bold text-label-bold px-6 py-3 rounded-lg flex items-center gap-2 shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all"
+                    th:href="@{/users/create}">
+                    <span class="material-symbols-outlined">add</span>
+                    Add New User
+                </a>
+            </div>
+            <!-- Filters Bar -->
+            <div
+                class="bg-white p-4 rounded-xl shadow-sm border border-outline-variant/30 flex flex-wrap gap-4 items-center">
+                <div class="flex items-center gap-2 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-caption">filter_list</span>
+                    <span class="font-label-bold text-label-bold">Quick Filters:</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <button
+                        class="px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-bold text-caption">All
+                        Users</button>
+                    <button
+                        class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-bold text-caption hover:bg-surface-container-highest transition-colors">Artisans</button>
+                    <button
+                        class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-bold text-caption hover:bg-surface-container-highest transition-colors">Clients</button>
+                    <button
+                        class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-bold text-caption hover:bg-surface-container-highest transition-colors">Pending
+                        Verification</button>
+                </div>
+                <div class="ml-auto flex items-center gap-2">
+                    <span class="text-caption text-on-surface-variant">Showing 1-12 of 284</span>
+                </div>
+            </div>
+            <!-- User Table (Professional Grid) -->
+            <div class="bg-white rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-surface-container-low border-b border-outline-variant/30">
+                            <th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">User
+                                Information</th>
+                            <th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">Role</th>
+                            <th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">Status</th>
+                            <th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">Join Date</th>
+                            <th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant text-right">
+                                Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline-variant/20">
+                        <tr th:each="u : ${users}" class="hover:bg-surface-bright transition-colors group">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+                                        <img alt="User" class="w-full h-full object-cover" src="/static/images/placeholder.jpg" />
+                                    </div>
+                                    <div>
+                                        <div class="font-label-bold text-label-bold text-on-surface" th:text="${u.nom + ' ' + u.prenom}">User Name</div>
+                                        <div class="text-caption text-on-surface-variant" th:text="${u.email}">email@example.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="bg-secondary-container/30 text-on-secondary-container px-2.5 py-1 rounded-md font-label-bold text-caption"
+                                    th:text="${u.roles != null && !#lists.isEmpty(u.roles) ? #lists.first(u.roles).role : 'USER'}">USER</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="flex items-center gap-1.5 text-emerald-600">
+                                    <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    <span class="font-label-bold text-caption uppercase">Active</span>
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-on-surface-variant text-body-base">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <div class="flex justify-end gap-2">
+                                    <a class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 rounded-lg"
+                                        th:href="@{/users/{id}/edit(id=${u.iduser})}">
+                                        <span class="material-symbols-outlined text-[20px]">edit</span>
+                                    </a>
+                                    <a class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 rounded-lg"
+                                        th:href="@{/users/{id}(id=${u.iduser})}">
+                                        <span class="material-symbols-outlined text-[20px]">visibility</span>
+                                    </a>
+                                    <form th:action="@{/users/{id}/delete(id=${u.iduser})}" method="post">
+                                        <button class="p-2 text-on-surface-variant hover:text-error transition-colors hover:bg-error-container/20 rounded-lg" type="submit">
+                                            <span class="material-symbols-outlined text-[20px]">delete</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                                    <button
+                                        class="p-2 text-on-surface-variant hover:text-error transition-colors hover:bg-error-container/20 rounded-lg">
+                                        <span class="material-symbols-outlined text-[20px]">delete</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- User Row 3 -->
+                        <tr class="hover:bg-surface-bright transition-colors group">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+                                        <img alt="User 3" class="w-full h-full object-cover"
+                                            data-alt="A clean, professional portrait of a female artisan in a bright, modern studio. The lighting is diffused and soft, supporting a corporate light-mode UI style. The background features subtle textures of handmade materials, emphasizing her role. The overall mood is focused and authentic, with a color palette of crisp whites, slate grays, and professional blue accents."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP-Wbn8r3RbqTnGMcAlCeMWer1M6xwBScdiBovVhuYAWOyCLx6G8l3XMkE9s2YHlEFzVFHTbtwIL84OpPpmBr1T_g2t9ymnaAifCVfgdiZTly_-TSYU-kjvUvYXOYBX_Ngs2n-pjuC9IAoD4iClWNwzX9SrsQjGEhVmVNrKjAqjBQLfyCDIwHkxXFHg-YmyP-XnDGBK5xure8c7Nf_wAqz4mgi9MuOHgQuhhPRPSGZkc3iZvzl1vGrBekIiwAvKme7elyys8d1Lt5P" />
+                                    </div>
+                                    <div>
+                                        <div class="font-label-bold text-label-bold text-on-surface">Maya Ishikawa</div>
+                                        <div class="text-caption text-on-surface-variant">m.ishikawa@heritage.io</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="bg-secondary-container/30 text-on-secondary-container px-2.5 py-1 rounded-md font-label-bold text-caption">Artisan</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="flex items-center gap-1.5 text-on-surface-variant/60">
+                                    <span class="material-symbols-outlined text-[14px]">history</span>
+                                    <span class="font-label-bold text-caption uppercase">Pending</span>
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-on-surface-variant text-body-base">Jan 02, 2024</td>
+                            <td class="px-6 py-4 text-right">
+                                <div class="flex justify-end gap-2">
+                                    <button
+                                        class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 rounded-lg">
+                                        <span class="material-symbols-outlined text-[20px]">edit</span>
+                                    </button>
+                                    <button
+                                        class="p-2 text-on-surface-variant hover:text-warning-600 transition-colors hover:bg-orange-50 rounded-lg">
+                                        <span class="material-symbols-outlined text-[20px]">block</span>
+                                    </button>
+                                    <button
+                                        class="p-2 text-on-surface-variant hover:text-error transition-colors hover:bg-error-container/20 rounded-lg">
+                                        <span class="material-symbols-outlined text-[20px]">delete</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- User Row 4 -->
+                        <tr class="hover:bg-surface-bright transition-colors group">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+                                        <img alt="User 4" class="w-full h-full object-cover"
+                                            data-alt="A portrait of a male business professional in a contemporary, sunlit office space. High-key lighting creates a clean, modern aesthetic suitable for a professional light-mode UI. The setting is minimal and well-ordered, conveying reliability and trustworthiness. The subject has a calm, confident demeanor, and the color scheme uses sophisticated neutral tones with a subtle blue primary color focus."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFD-_tVDbcckkwGd-SztOw8Tl9PMfqN2dr8bdBrTSDXGFb_Yz7QhAVmocICGIgzVtW1u05TatN0FMD4rFxKe7oCZAQC8MUez1WNPPZX1VjnejU1S6zy3YoO3b_Tua1gKDsQV-XMOwly-1TwI5kzc7gC0SDL_b1mFU3Z4c0AUwWBnlwC_DhVJRpDRIiw5pWg0jUv6CH8deX5cuEtOEBDWp92xhFXxL7aNx-NZ1uM-_DqTw7vM6X5Y1rfUo-5dutMTiHauXcTIL9FPmH" />
+                                    </div>
+                                    <div>
+                                        <div class="font-label-bold text-label-bold text-on-surface">David Chen</div>
+                                        <div class="text-caption text-on-surface-variant">d.chen@global.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2.5 py-1 rounded-md font-label-bold text-caption">Client</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="flex items-center gap-1.5 text-error">
+                                    <span class="material-symbols-outlined text-[14px]"
+                                        style="font-variation-settings: 'FILL' 1;">cancel</span>
+                                    <span class="font-label-bold text-caption uppercase">Deactivated</span>
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-on-surface-variant text-body-base">Aug 19, 2023</td>
+                            <td class="px-6 py-4 text-right">
+                                <div class="flex justify-end gap-2">
+                                    <button
+                                        class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 rounded-lg">
+                                        <span class="material-symbols-outlined text-[20px]">edit</span>
+                                    </button>
+                                    <button class="p-2 text-primary transition-colors hover:bg-primary/10 rounded-lg">
+                                        <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                                    </button>
+                                    <button
+                                        class="p-2 text-on-surface-variant hover:text-error transition-colors hover:bg-error-container/20 rounded-lg">
+                                        <span class="material-symbols-outlined text-[20px]">delete</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Pagination -->
+                <div class="px-6 py-4 bg-surface-container-low flex items-center justify-between">
+                    <span class="text-caption text-on-surface-variant font-body-base">Page 1 of 24</span>
+                    <div class="flex items-center gap-1">
+                        <button class="p-2 text-on-surface-variant disabled:opacity-30" disabled="">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button
+                            class="w-8 h-8 rounded-md bg-primary text-on-primary text-caption font-label-bold">1</button>
+                        <button
+                            class="w-8 h-8 rounded-md hover:bg-surface-container-highest transition-colors text-caption font-label-bold">2</button>
+                        <button
+                            class="w-8 h-8 rounded-md hover:bg-surface-container-highest transition-colors text-caption font-label-bold">3</button>
+                        <span class="px-1 text-on-surface-variant">...</span>
+                        <button
+                            class="w-8 h-8 rounded-md hover:bg-surface-container-highest transition-colors text-caption font-label-bold">24</button>
+                        <button class="p-2 text-on-surface-variant">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Dashboard Stats Summary (Bento Style) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="bg-primary-container text-on-primary-container p-6 rounded-xl shadow-sm flex items-center justify-between group hover:scale-[1.02] transition-transform cursor-pointer">
+                    <div>
+                        <div class="text-caption font-label-bold uppercase opacity-80">Total Active Users</div>
+                        <div class="text-headline-section font-display-hero">2,842</div>
+                        <div class="text-caption mt-1 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[16px]">trending_up</span>
+                            <span>+12% this month</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-[48px] opacity-20">group</span>
+                </div>
+                <div
+                    class="bg-surface-container-highest p-6 rounded-xl shadow-sm flex items-center justify-between group hover:scale-[1.02] transition-transform cursor-pointer">
+                    <div>
+                        <div class="text-caption font-label-bold text-on-surface-variant uppercase">New Applications
+                        </div>
+                        <div class="text-headline-section font-display-hero text-on-surface">48</div>
+                        <div class="text-caption mt-1 text-primary flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[16px]">priority_high</span>
+                            <span>Awaiting review</span>
+                        </div>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-[48px] text-on-surface-variant opacity-20">verified_user</span>
+                </div>
+                <div
+                    class="bg-surface-container-high border border-primary/20 p-6 rounded-xl shadow-sm flex items-center justify-between group hover:scale-[1.02] transition-transform cursor-pointer">
+                    <div>
+                        <div class="text-caption font-label-bold text-on-surface-variant uppercase">Churn Rate</div>
+                        <div class="text-headline-section font-display-hero text-on-surface">1.2%</div>
+                        <div class="text-caption mt-1 text-emerald-600 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+                            <span>Lower than avg</span>
+                        </div>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-[48px] text-on-surface-variant opacity-20">analytics</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

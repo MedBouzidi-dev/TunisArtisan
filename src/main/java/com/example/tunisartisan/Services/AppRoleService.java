@@ -19,10 +19,10 @@ public class AppRoleService implements IAppRoleService {
     }
 
     @Override
-    public AppRole getAppRoleById(Long id) {
-        Optional<AppRole> appRole = appRoleRepository.findById(id);
-        return appRole.orElse(null);
-    }
+	public AppRole getAppRoleById(String id) {
+		Optional<AppRole> appRole = appRoleRepository.findById(id);
+		return appRole.orElse(null);
+	}
 
     @Override
     public List<AppRole> getAllAppRoles() {
@@ -30,16 +30,16 @@ public class AppRoleService implements IAppRoleService {
     }
 
     @Override
-    public AppRole updateAppRole(Long id, AppRole appRole) {
-        if (appRoleRepository.existsById(id)) {
-            appRole.setId(id);
-            return appRoleRepository.save(appRole);
-        }
-        return null;
-    }
+	public AppRole updateAppRole(String id, AppRole appRole) {
+		if (appRoleRepository.existsById(id)) {
+			// appRole.setId(id); // À adapter selon la structure de AppRole
+			return appRoleRepository.save(appRole);
+		}
+		return null;
+	}
 
     @Override
-    public void deleteAppRole(Long id) {
+    public void deleteAppRole(String id) {
         appRoleRepository.deleteById(id);
     }
 }

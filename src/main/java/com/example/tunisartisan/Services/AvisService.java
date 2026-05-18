@@ -32,7 +32,7 @@ public class AvisService implements IAvisService {
     @Override
     public Avis updateAvis(Long id, Avis avis) {
         if (avisRepository.existsById(id)) {
-            avis.setId(id);
+            avis.setIdavis(id);
             return avisRepository.save(avis);
         }
         return null;

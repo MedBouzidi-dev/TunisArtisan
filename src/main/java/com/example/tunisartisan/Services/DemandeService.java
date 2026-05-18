@@ -32,7 +32,7 @@ public class DemandeService implements IDemandeService {
     @Override
     public Demande updateDemande(Long id, Demande demande) {
         if (demandeRepository.existsById(id)) {
-            demande.setId(id);
+            demande.setIddemande(id);
             return demandeRepository.save(demande);
         }
         return null;
